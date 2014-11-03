@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui">
+  
+        <h:head>
+        <title>Cadastro</title>
+        <style type="text/css">
+    .ui-layout-unit-content{
+        background-image:url('#{request.contextPath}/img/background.png');
+    }
+</style>
+    </h:head>
+    <h:body class="ui-layout-unit-content">
+    <h:form>
+    
+    <p:growl id="messages"/>
+  <p:menubar>
+        <p:submenu label="Matrícula" icon="ui-icon-document">
+            <p:submenu label="Cadastro" icon="ui-icon-contact">
+                <p:menuitem value="Novo" url="#" onclick="PF('dlg3').show();"/>
+                <p:menuitem value="Consulta" url="#" />
+            </p:submenu>
+        </p:submenu>
+        <p:submenu label="Financeiro" icon="ui-icon-pencil">
+            <p:menuitem value="Modalidades" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Boletos" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        </p:submenu>
+        <p:submenu label="Ajuda" icon="ui-icon-help"></p:submenu>
+        <p:submenu label="Sobre" icon="ui-icon-gear"></p:submenu>
+        <p:menuitem value="Sair" url="http://www.primefaces.org" icon="ui-icon-close" />
+        <f:facet name="options">
+            <p:inputText style="margin-right:10px" placeholder="Search"/>
+            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+        </f:facet>
+    </p:menubar>
+    
+    <!-- Cadastro -->
+    <p:dialog header="Cadastro" widgetVar="dlg3" showEffect="puff" hideEffect="bounce" height="100" resizable="false">
+        <p:column>
+            <h:outputText value="Nome"/>
+            <p:inputText />
+        </p:column>
+        
+     
+    </p:dialog>
+    <!-- End Cadastro -->
+    
+    <!-- Dock -->
+    <p:dock position="bottom">
+        <p:menuitem value="Cadastro" icon="img/person.png" onclick="PF('dlg3').show();" url="#"/>
+        <p:menuitem value="Caixa" icon="img/finance.png" url="#"/>
+        <p:menuitem value="Relatórios" icon="img/report.png" url="#"/>
+        <p:menuitem value="Boletos" icon="img/barcode.png" url="#"/>
+    <!-- more menuitems -->
+    </p:dock>
+    <!-- End Dock -->
+    
+</h:form>  
+</h:body>
+</html>
+
